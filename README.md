@@ -51,4 +51,28 @@ scoring — all through a modern web dashboard with a live 3D attack globe.
 
 ---
 
-## 📁 Project Structure
+---
+
+## 🚀 How to Run
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Utsav0903/RADSAS.git
+cd RADSAS
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the application
+python app.py
+
+# OR on Windows — double click
+run_dashboard.bat
+
+# 4. Open in browser
+http://localhost:5000
+```
+
+---
+
+## 🔬 How It Works
