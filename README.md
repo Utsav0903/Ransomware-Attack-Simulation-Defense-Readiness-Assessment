@@ -76,3 +76,30 @@ http://localhost:5000
 ---
 
 ## 🔬 How It Works
+
+---
+
+## ⚠️ Ethical Usage
+
+This tool is built for:
+- ✅ Cybersecurity education and research
+- ✅ Defense readiness testing
+- ✅ Academic project demonstration
+- ❌ NOT for use on real systems or networks
+
+---
+
+## 👨‍💻 Author
+
+**Utsav Porwal**
+MCA Cybersecurity — UPES Dehradun
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/utsav-porwal-897888321/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Utsav0903)
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-212C42?style=flat-square&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/Utsav09)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
