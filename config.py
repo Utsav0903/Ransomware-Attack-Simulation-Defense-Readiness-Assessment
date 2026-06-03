@@ -1,0 +1,11 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+VICTIM_DIR = os.path.join(BASE_DIR, 'victim_files')
+SECRET_KEY_FILE = os.path.join(BASE_DIR, 'key', 'secret.key')
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+DASHBOARD_STATE = os.path.join(LOG_DIR, 'dashboard_state.json')
+LIVE_LOGS = os.path.join(LOG_DIR, 'live_logs.json')
+TIMELINE = os.path.join(LOG_DIR, 'timeline.json')
+FORENSIC_REPORT = os.path.join(LOG_DIR, 'forensic_report.json')
+os.makedirs(LOG_DIR, exist_ok=True)
+os.makedirs(VICTIM_DIR, exist_ok=True)

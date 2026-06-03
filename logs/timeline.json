@@ -1,0 +1,182 @@
+[
+    {
+        "time": "01:05:10",
+        "event": "Attack sequence started"
+    },
+    {
+        "time": "01:05:10",
+        "event": "RECON phase initiated"
+    },
+    {
+        "time": "01:05:12",
+        "event": "INFILTRATE phase initiated"
+    },
+    {
+        "time": "01:05:14",
+        "event": "LATERAL phase initiated"
+    },
+    {
+        "time": "01:05:16",
+        "event": "Payment portal opened"
+    },
+    {
+        "time": "01:05:16",
+        "event": "File encryption started"
+    },
+    {
+        "time": "01:05:16",
+        "event": "Test  (1).jpg encrypted"
+    },
+    {
+        "time": "01:05:16",
+        "event": "Test  (2).txt encrypted"
+    },
+    {
+        "time": "01:05:17",
+        "event": "Test  (3).txt encrypted"
+    },
+    {
+        "time": "01:05:17",
+        "event": "Test  (4).txt encrypted"
+    },
+    {
+        "time": "01:05:18",
+        "event": "Test  (5).txt encrypted"
+    },
+    {
+        "time": "01:05:18",
+        "event": "Test  (6).txt encrypted"
+    },
+    {
+        "time": "01:05:18",
+        "event": "Test  (7).txt encrypted"
+    },
+    {
+        "time": "01:05:19",
+        "event": "Attack initialized"
+    },
+    {
+        "time": "01:05:19",
+        "event": "Reconnaissance phase started"
+    },
+    {
+        "time": "01:05:20",
+        "event": "Victim files discovered"
+    },
+    {
+        "time": "01:05:20",
+        "event": "Encryption engine initialized"
+    },
+    {
+        "time": "01:05:21",
+        "event": "Encryption process started"
+    },
+    {
+        "time": "01:05:21",
+        "event": "7 files encrypted successfully"
+    },
+    {
+        "time": "01:05:22",
+        "event": "System integrity compromised"
+    },
+    {
+        "time": "01:05:22",
+        "event": "Payment verified"
+    },
+    {
+        "time": "01:05:22",
+        "event": "Attack sequence completed"
+    },
+    {
+        "time": "01:05:40",
+        "event": "Recovery sequence started"
+    },
+    {
+        "time": "01:05:40",
+        "event": "Test  (1).jpg recovered"
+    },
+    {
+        "time": "01:05:41",
+        "event": "Test  (2).txt recovered"
+    },
+    {
+        "time": "01:05:41",
+        "event": "Test  (3).txt recovered"
+    },
+    {
+        "time": "01:05:41",
+        "event": "Test  (4).txt recovered"
+    },
+    {
+        "time": "01:05:42",
+        "event": "Test  (5).txt recovered"
+    },
+    {
+        "time": "01:05:42",
+        "event": "Test  (6).txt recovered"
+    },
+    {
+        "time": "01:05:42",
+        "event": "Test  (7).txt recovered"
+    },
+    {
+        "time": "01:05:43",
+        "event": "Recovery complete. System status: SAFE."
+    },
+    {
+        "time": "01:06:10",
+        "event": "Test  (1).jpg encrypted"
+    },
+    {
+        "time": "01:06:10",
+        "event": "Test  (2).txt encrypted"
+    },
+    {
+        "time": "01:06:10",
+        "event": "Test  (3).txt encrypted"
+    },
+    {
+        "time": "01:06:10",
+        "event": "Test  (4).txt encrypted"
+    },
+    {
+        "time": "01:06:10",
+        "event": "Test  (5).txt encrypted"
+    },
+    {
+        "time": "01:06:10",
+        "event": "Test  (6).txt encrypted"
+    },
+    {
+        "time": "01:06:10",
+        "event": "Test  (7).txt encrypted"
+    },
+    {
+        "time": "01:06:26",
+        "event": "Test  (1).jpg recovered"
+    },
+    {
+        "time": "01:06:26",
+        "event": "Test  (2).txt recovered"
+    },
+    {
+        "time": "01:06:26",
+        "event": "Test  (3).txt recovered"
+    },
+    {
+        "time": "01:06:26",
+        "event": "Test  (4).txt recovered"
+    },
+    {
+        "time": "01:06:26",
+        "event": "Test  (5).txt recovered"
+    },
+    {
+        "time": "01:06:26",
+        "event": "Test  (6).txt recovered"
+    },
+    {
+        "time": "01:06:26",
+        "event": "Test  (7).txt recovered"
+    }
+]

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About — RADSAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/global.css">
+<style>
+/* ── About page styles ─────────────────────────────── */
+.about-wrap{flex:1;padding:28px 32px;overflow:auto}
+.about-page-title{
+  font-size:38px;font-weight:900;letter-spacing:2px;margin-bottom:6px;
+  background:linear-gradient(90deg,#a78bfa,#60a5fa,#34d399);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.about-page-sub{font-size:18px;opacity:0.50;margin-bottom:26px;letter-spacing:0.5px}
+
+/* hero banner */
+.about-hero{
+  padding:32px 36px;border-radius:22px;margin-bottom:22px;
+  background:linear-gradient(135deg,rgba(124,58,237,0.18),rgba(29,78,216,0.18),rgba(6,182,212,0.12));
+  border:1px solid rgba(124,58,237,0.22);
+  display:flex;align-items:center;gap:28px;
+}
+.about-hero-icon{font-size:64px;line-height:1;flex-shrink:0}
+.about-hero-title{font-size:22px;font-weight:900;letter-spacing:1px;margin-bottom:8px;color:#e0eaff}
+.about-hero-desc {font-size:14px;line-height:1.85;opacity:0.72}
+
+/* grid */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+.about-grid-3{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:22px;
+
+}
+.about-card{padding:26px}
+
+.about-card-title{
+  font-size:18px;font-weight:800;letter-spacing:2.5px;margin-bottom:18px;
+  display:flex;align-items:center;gap:8px;
+}
+.about-card-title::before{
+  content:'';width:4px;height:13px;border-radius:3px;display:block;
+}
+.accent-purple::before{background:linear-gradient(180deg,#7c3aed,#a78bfa)}
+.accent-blue::before  {background:linear-gradient(180deg,#1d4ed8,#60a5fa)}
+.accent-green::before {background:linear-gradient(180deg,#059669,#34d399)}
+.accent-yellow::before{background:linear-gradient(180deg,#d97706,#fbbf24)}
+.accent-pink::before  {background:linear-gradient(180deg,#db2777,#f472b6)}
+.accent-cyan::before  {background:linear-gradient(180deg,#0891b2,#22d3ee)}
+
+.color-purple{color:#a78bfa}.color-blue{color:#93c5fd}
+.color-green {color:#6ee7b7}.color-yellow{color:#fde68a}
+.color-pink  {color:#f9a8d4}.color-cyan {color:#67e8f9}
+
+.about-text{font-size:18px;line-height:2.0;opacity:0.72;color:#c8d8ff}
+.about-text b{font-weight:700}
+
+/* feature list */
+.feat-list{display:flex;flex-direction:column;gap:10px}
+.feat-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:11px 14px;border-radius:12px;
+  background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.045);
+  font-size:13px;line-height:1.6;transition:.25s;
+}
+.feat-item:hover{background:rgba(124,58,237,0.07);border-color:rgba(124,58,237,0.18)}
+.feat-icon{font-size:18px;flex-shrink:0;width:24px;text-align:center;margin-top:1px}
+.feat-name{font-weight:700;color:#e0eaff;margin-bottom:2px;font-size:16px}
+.feat-desc{font-size:16px;opacity:0.58;line-height:1.55}
+
+/* tech stack */
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tech-item{
+  padding:13px 16px;border-radius:13px;
+  background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.040);
+  transition:.25s;
+}
+.tech-item:hover{background:rgba(29,78,216,0.10);border-color:rgba(96,165,250,0.20)}
+.tech-name {font-size:13px;font-weight:700;color:#93c5fd;margin-bottom:4px}
+.tech-ver  {font-size:11px;opacity:0.45;margin-bottom:5px}
+.tech-desc {font-size:12px;opacity:0.60;line-height:1.55}
+
+/* attack phases */
+.phase-list{display:flex;flex-direction:column;gap:0}
+.phase-row{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.040);
+}
+.phase-row:last-child{border-bottom:none}
+.phase-badge{
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:900;flex-shrink:0;
+}
+.phase-name {font-size:16px;font-weight:700;color:#e0eaff;margin-bottom:3px}
+.phase-desc {font-size:15px;opacity:0.55;line-height:1.5}
+
+/* stat pills */
+.stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.stat-pill{
+  padding:8px 18px;border-radius:30px;font-size:13px;font-weight:700;
+  display:flex;align-items:center;gap:8px;
+}
+
+/* disclaimer */
+.about-disclaimer{
+  padding:20px 24px;border-radius:16px;
+  background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.20);
+  font-size:13px;line-height:1.85;color:#fde68a;
+}
+.about-disclaimer strong{color:#fbbf24}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="topbar">
+    <div class="logo-wrap">
+      <div class="logo-circle">R</div>
+      <div class="logo-text"><h1>RADSAS</h1><p>ATTACK SIMULATION SYSTEM</p></div>
+    </div>
+    <div class="nav-links">
+      <a href="/"       class="nav-link">Dashboard</a>
+      <a href="/manual" class="nav-link">Manual</a>
+      <a href="/about"  class="nav-link active">About Project</a>
+    </div>
+    <div class="topbar-right">
+      <div class="live-status" style="color:#a78bfa">&#9679; PROJECT OVERVIEW</div>
+    </div>
+  </div>
+
+  <div class="about-wrap">
+
+    <div class="about-page-title">RADSAS</div>
+    <div class="about-page-sub">Ransomware Attack, Defense &amp; Simulation System — Full Documentation</div>
+
+    <!-- Hero -->
+    <div class="about-hero">
+      <div class="about-hero-icon">&#128737;</div>
+      <div>
+        <div class="about-hero-title">What is RADSAS?</div>
+        <div class="about-hero-desc">
+          RADSAS is a full-stack, interactive <b style="color:#a78bfa">ransomware simulation and defense readiness platform</b>
+          built for cybersecurity education. It simulates a complete ransomware lifecycle —
+          from initial reconnaissance through file encryption to forensic recovery —
+          inside a fully safe, isolated sandbox environment.
+          The system features a <b style="color:#60a5fa">cinematic 3D SOC globe</b>,
+          a live system terminal, attack timeline tracking, and automated forensic report generation.
+        </div>
+        <div class="stat-row" style="margin-top:16px">
+          <div class="stat-pill" style="background:rgba(124,58,237,0.14);border:1px solid rgba(124,58,237,0.28);color:#a78bfa">
+            &#9679; Full-Stack Web App
+          </div>
+          <div class="stat-pill" style="background:rgba(29,78,216,0.14);border:1px solid rgba(29,78,216,0.28);color:#60a5fa">
+            &#9679; Python + Flask Backend
+          </div>
+          <div class="stat-pill" style="background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.25);color:#34d399">
+            &#9679; Fernet Encryption
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Features + Attack Phases -->
+    <div class="about-grid">
+
+      <div class="panel about-card">
+        <div class="about-card-title accent-purple color-purple">&#10024; CORE FEATURES</div>
+        <div class="feat-list">
+          <div class="feat-item">
+            <span class="feat-icon">&#127760;</span>
+            <div>
+              <div class="feat-name">Cinematic 3D SOC Globe</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128274;</span>
+            <div>
+              <div class="feat-name">Ransomware Encryption Engine</div>
+              
+            </div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128275;</span>
+            <div>
+              <div class="feat-name">Automatic Recovery System</div>
+              
+            </div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128202;</span>
+            <div>
+              <div class="feat-name">Live SOC Dashboard</div>
+              
+            </div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128196;</span>
+            <div>
+              <div class="feat-name">Forensic Report Generator</div>
+              
+            </div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128295;</span>
+            <div>
+              <div class="feat-name">Manual Encryption Engine</div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel about-card">
+        <div class="about-card-title accent-pink color-pink">&#9876; ATTACK LIFECYCLE (6 PHASES)</div>
+        <div class="phase-list">
+          <div class="phase-row">
+            <div class="phase-badge" style="background:rgba(156,163,175,0.15);border:1.5px solid #6b7280;color:#9ca3af">00</div>
+            <div>
+              <div class="phase-name">IDLE</div>
+              <div class="phase-desc">System in standby mode. No active threat detected. All files safe and accessible.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-badge" style="background:rgba(96,165,250,0.15);border:1.5px solid #3b82f6;color:#60a5fa">01</div>
+            <div>
+              <div class="phase-name">RECON</div>
+              <div class="phase-desc">Attacker fingerprints the system, scans directories, and identifies high-value targets.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-badge" style="background:rgba(167,139,250,0.15);border:1.5px solid #7c3aed;color:#a78bfa">02</div>
+            <div>
+              <div class="phase-name">INFILTRATE</div>
+              <div class="phase-desc">Payload delivered. Memory hooks injected. Persistence mechanism established in registry.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-badge" style="background:rgba(251,191,36,0.15);border:1.5px solid #d97706;color:#fbbf24">03</div>
+            <div>
+              <div class="phase-name">LATERAL MOVEMENT</div>
+              <div class="phase-desc">Malware spreads across connected drives, network shares, and accessible file systems.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-badge" style="background:rgba(255,61,107,0.15);border:1.5px solid #dc2626;color:#ff3d6b">04</div>
+            <div>
+              <div class="phase-name">ENCRYPT</div>
+              <div class="phase-desc">AES-128 cipher applied to all victim files. Original data overwritten. Ransom note dropped.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-badge" style="background:rgba(52,211,153,0.15);border:1.5px solid #059669;color:#34d399">05</div>
+            <div>
+              <div class="phase-name">COMPLETE</div>
+              <div class="phase-desc">All files encrypted. System compromised. Decryption key held for simulated ransom payment.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tech Stack -->
+    <!-- Tech Stack -->
+<div class="about-grid">
+
+    <div class="panel about-card">
+      <div class="about-card-title accent-blue color-blue">&#128736; TECHNOLOGY STACK</div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-name">&#128013; Python 3.14</div>
+          <div class="tech-ver">Backend runtime</div>
+          
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">&#9881; Flask 3.1</div>
+          <div class="tech-ver">Web framework</div>
+         
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">&#128274; Cryptography</div>
+          <div class="tech-ver">Fernet AES-128</div>
+          
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">&#9881; CSS</div>
+          <div class="tech-ver">UI theme</div>
+       
+          
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">&#128196; JSON </div>
+          <div class="tech-ver">State storage</div>
+         
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture  -->
+ 
+
+<div class="panel about-card">
+        <div class="about-card-title accent-green color-green">&#128268; SYSTEM ARCHITECTURE</div>
+
+        <div class="about-text">
+
+          The system follows a <b>client-server</b> model.<br><br>
+
+          The <b>Flask backend</b> manages all state via JSON files and exposes a REST API
+          (<code style="color:#67e8f9">/status</code>,
+          <code style="color:#67e8f9">/attack</code>,
+          <code style="color:#67e8f9">/decrypt</code>)
+          polled by the frontend every 1 second.<br><br>
+
+          Encryption and decryption run in
+          <b>background daemon threads</b>
+          so the dashboard remains responsive during operations.<br><br>
+
+          State is <b>fully reset</b>
+          on every dashboard reload for a clean simulation session.
+
+        </div>
+
+</div>
+
+</div>
+
+
+    <!-- Disclaimer -->
+    <div class="about-disclaimer">
+      <strong>&#9888; Ethical Use Notice</strong><br>
+      RADSAS is intended strictly for controlled, educational environments. The encryption engine
+      operates only on files within the designated <code>victim_files/</code> sandbox directory.
+      No real systems, networks, or external files are affected. Using techniques demonstrated here
+      against real systems without authorization is illegal and unethical.
+      <strong>This tool must only be used for learning and research purposes.</strong>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

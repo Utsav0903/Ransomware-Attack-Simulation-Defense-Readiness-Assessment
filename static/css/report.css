@@ -1,0 +1,904 @@
+/* =========================================================
+   PREMIUM MOTION SYSTEM
+========================================================= */
+
+.panel{
+
+  animation:
+  fadeUp .45s ease;
+
+}
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(14px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+
+
+/* =========================================================
+   REPORT PAGE
+========================================================= */
+
+.report-wrap{
+
+  flex:1;
+
+  padding:34px;
+
+  overflow:auto;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.rpt-header{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  margin-bottom:28px;
+
+}
+
+.rpt-header-title{
+
+  font-size:26px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  color:#eef4ff;
+
+}
+
+.rpt-header-sub{
+
+  font-size:13px;
+
+  opacity:0.48;
+
+  margin-top:6px;
+
+  font-family:monospace;
+
+}
+
+.rpt-header-actions{
+
+  display:flex;
+
+  gap:12px;
+
+}
+
+.rpt-btn{
+
+transition:
+transform .22s ease,
+box-shadow .22s ease,
+background .22s ease;
+
+  padding:10px 18px;
+
+  border-radius:12px;
+
+  border:none;
+
+  cursor:pointer;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  background:rgba(255,255,255,0.06);
+
+  color:#c8d7ff;
+
+  transition:.25s ease;
+
+}
+
+.rpt-btn:hover{
+
+  transform:
+  translateY(-2px);
+
+  box-shadow:
+  0 0 18px rgba(96,165,250,0.14);
+
+  background:
+  rgba(255,255,255,0.10);
+
+  color:#fff;
+
+}
+
+.rpt-btn.primary{
+
+  background:
+  linear-gradient(
+    135deg,
+    #1d4ed8,
+    #60a5fa
+  );
+
+  color:#fff;
+
+  box-shadow:
+  0 0 18px rgba(96,165,250,0.24);
+
+}
+
+/* =========================================================
+   INCIDENT SUMMARY
+========================================================= */
+
+.rpt-summary-card{
+
+  padding:28px;
+
+  border-radius:24px;
+
+  margin-bottom:26px;
+
+  background:
+  linear-gradient(
+    145deg,
+    rgba(10,18,38,0.96),
+    rgba(5,9,22,0.98)
+  );
+
+  border:
+  1px solid rgba(96,165,250,0.14);
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,0.35);
+
+}
+
+.rpt-summary-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:26px;
+
+}
+
+.rpt-summary-title{
+
+  font-size:28px;
+
+  font-weight:900;
+
+  color:#eef4ff;
+
+  letter-spacing:1px;
+
+}
+
+.rpt-summary-sub{
+
+  margin-top:6px;
+
+  font-size:14px;
+
+  color:#7f96b2;
+
+}
+
+.rpt-summary-status{
+
+  padding:12px 18px;
+
+  border-radius:14px;
+
+  font-size:13px;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+
+  background:
+  rgba(96,165,250,0.12);
+
+  color:#93c5fd;
+
+}
+
+.rpt-summary-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:18px;
+
+}
+
+.rpt-summary-box{
+
+  padding:20px;
+
+  border-radius:18px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,255,255,0.04);
+
+}
+
+.sum-label{
+
+  font-size:12px;
+
+  letter-spacing:2px;
+
+  color:#7f96b2;
+
+  margin-bottom:10px;
+
+  font-weight:700;
+
+}
+
+.sum-value{
+
+  font-size:26px;
+
+  font-weight:900;
+
+  color:#eef4ff;
+
+}
+
+
+/* =========================================================
+   KPI ROW
+========================================================= */
+
+.rpt-kpi-row{
+
+  display:grid;
+
+  grid-template-columns:repeat(6,1fr);
+
+  gap:16px;
+
+  margin-bottom:24px;
+
+}
+
+.rpt-kpi{
+	min-height:170px;
+
+	position:relative;
+
+	overflow:hidden;
+
+	box-shadow:
+	0 10px 35px rgba(0,0,0,0.35);
+
+  padding:22px 14px;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+    160deg,
+    rgba(10,18,38,0.94),
+    rgba(5,9,22,0.98)
+  );
+
+  border:
+  1px solid rgba(70,120,255,0.14);
+
+  border-radius:18px;
+
+  transition:0.3s ease;
+
+}
+
+.rpt-kpi:hover{
+
+  transform:translateY(-3px);
+
+  border-color:
+  rgba(96,165,250,0.32);
+
+  box-shadow:
+  0 0 30px rgba(96,165,250,0.14);
+}
+
+.kpi-icon{
+
+  font-size:26px;
+
+  margin-bottom:10px;
+
+}
+
+.kpi-val{
+
+  font-size:42px;
+
+  font-weight:900;
+
+  color:#60a5fa;
+
+  line-height:1;
+
+}
+
+.kpi-label{
+
+  font-size:14px;
+
+  font-weight:800;
+
+  letter-spacing:1.8px;
+
+  opacity:0.55;
+
+  margin-top:10px;
+
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.rpt-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:20px;
+
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.rpt-card{
+  transition:
+  transform .25s ease,
+  box-shadow .25s ease,
+  border-color .25s ease;
+
+  padding:30px;
+
+  border-radius:22px;
+
+}
+
+.rpt-card:hover{
+
+  transform:
+  translateY(-4px);
+
+  box-shadow:
+  0 0 28px rgba(96,165,250,0.08);
+
+}
+.rpt-card-tall{
+
+  min-height:360px;
+
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.rpt-title{
+
+  font-size:18px;
+
+  font-weight:900;
+
+  letter-spacing:1.5px;
+
+  margin-bottom:24px;
+
+  color:#60a5fa;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+}
+
+.rpt-title::before{
+
+  content:'';
+
+  width:5px;
+
+  height:18px;
+
+  background:#2563eb;
+
+  border-radius:4px;
+
+  display:block;
+
+}
+
+
+/* =========================================================
+   ATTACK DETAILS
+========================================================= */
+
+.det-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  padding:14px 0;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.04);
+
+  font-size:16px;
+
+}
+
+.det-row:last-child{
+
+  border-bottom:none;
+
+}
+
+.det-icon{
+
+  font-size:18px;
+
+  width:24px;
+
+  text-align:center;
+
+  flex-shrink:0;
+
+}
+
+.det-label{
+
+  opacity:0.62;
+
+  flex:1;
+
+  font-size:15px;
+
+}
+
+.det-val{
+
+  font-weight:700;
+
+  color:#eef4ff;
+
+  font-size:15px;
+
+}
+
+
+/* =========================================================
+   FILE BREAKDOWN
+========================================================= */
+
+.fb-row{
+
+  margin-bottom:22px;
+
+}
+
+.fb-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  font-size:14px;
+
+  margin-bottom:8px;
+
+}
+
+.fb-name{
+
+  opacity:0.65;
+
+  letter-spacing:0.5px;
+
+}
+
+.fb-nums{
+
+  font-weight:700;
+
+}
+
+.fb-track{
+
+  height:12px;
+
+  background:rgba(255,255,255,0.06);
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+}
+
+.fb-fill{
+
+  height:100%;
+
+  border-radius:12px;
+
+  transition:width 1s ease;
+  
+  box-shadow:
+  0 0 18px rgba(255,255,255,0.24);
+
+}
+
+.rpt-summary{
+
+  margin-top:18px;
+
+  padding:16px;
+
+  border-radius:14px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,255,255,0.05);
+
+  font-size:15px;
+
+  line-height:1.8;
+
+}
+
+
+/* =========================================================
+   EVENT LOG
+========================================================= */
+
+.rpt-log-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  max-height:420px;
+
+  overflow-y:auto;
+
+}
+
+.rpt-log-item{
+
+  padding:18px 20px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border-left:
+  4px solid #60a5fa;
+
+  border-top:
+  1px solid rgba(255,255,255,0.05);
+
+  border-right:
+  1px solid rgba(255,255,255,0.04);
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.04);
+
+  transition:.25s ease;
+
+}
+
+.rpt-log-item:hover{
+
+  transform:translateX(4px);
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+.rpt-log-item.error{
+
+  border-left-color:#ff4d6d;
+
+}
+
+.rpt-log-item.warning{
+
+  border-left-color:#facc15;
+
+}
+.rpt-log-item.success{
+
+  border-left-color:#4ade80;
+
+  background:
+  rgba(74,222,128,0.04);
+
+}
+
+.rpt-log-item.critical{
+
+  border-left-color:#ff2e2e;
+
+  background:
+  rgba(255,46,46,0.06);
+
+  box-shadow:
+  0 0 22px rgba(255,46,46,0.16);
+
+}
+
+.rpt-log-time{
+
+  font-size:13px;
+
+  color:#60a5fa;
+
+  opacity:1;
+
+  font-weight:700;
+
+  margin-bottom:8px;
+
+  font-family:monospace;
+
+}
+
+.rpt-log-msg{
+
+  font-size:16px;
+
+  line-height:1.7;
+
+}
+
+
+/* =========================================================
+   ADVANCED LOG SYSTEM
+========================================================= */
+
+.rpt-log-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:12px;
+
+}
+
+.rpt-log-badge{
+
+  padding:6px 12px;
+
+  border-radius:999px;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+
+}
+
+/* INFO */
+
+.rpt-log-badge.info{
+
+  background:
+  rgba(96,165,250,0.12);
+
+  color:#60a5fa;
+
+}
+
+/* SUCCESS */
+
+.rpt-log-badge.success{
+
+  background:
+  rgba(74,222,128,0.14);
+
+  color:#4ade80;
+
+}
+
+/* WARNING */
+
+.rpt-log-badge.warning{
+
+  background:
+  rgba(250,204,21,0.14);
+
+  color:#facc15;
+
+}
+
+/* ERROR */
+
+.rpt-log-badge.error{
+
+  background:
+  rgba(255,77,109,0.14);
+
+  color:#ff4d6d;
+
+}
+
+/* CRITICAL */
+
+.rpt-log-badge.critical{
+
+  background:
+  rgba(255,46,46,0.16);
+
+  color:#ff2e2e;
+
+  box-shadow:
+  0 0 18px rgba(255,46,46,0.18);
+
+}
+
+/* =========================================================
+   RECOMMENDATIONS
+========================================================= */
+
+.rec-row{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:14px;
+
+  padding:14px 0;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.04);
+
+  font-size:15px;
+
+  line-height:1.8;
+
+  opacity:0.82;
+
+ background:
+ rgba(255,255,255,0.02);
+
+ padding-left:12px;
+
+ border-radius:12px;
+
+}
+
+.rec-row:last-child{
+
+  border-bottom:none;
+
+}
+
+.rec-ico{
+
+  font-size:18px;
+
+  flex-shrink:0;
+
+  margin-top:2px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1400px){
+
+  .rpt-kpi-row{
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+  }
+
+}
+
+@media(max-width:950px){
+
+  .rpt-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+@media(max-width:700px){
+
+  .rpt-kpi-row{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+  .rpt-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+  }
+
+}
+

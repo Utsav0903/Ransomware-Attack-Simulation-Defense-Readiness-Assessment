@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RADSAS Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/global.css">
+<link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="logo-wrap">
+      <div class="logo-circle">R</div>
+      <div class="logo-text"><h1>RADSAS</h1><p>ATTACK SIMULATION SYSTEM</p></div>
+    </div>
+    <div class="nav-links">
+      <a href="/" class="nav-link active">Dashboard</a>
+      <a href="/manual" class="nav-link">Manual</a>
+      <a href="/about" class="nav-link">About Project</a>
+    </div>
+    <div class="topbar-right"><div class="live-status">&#9679; LIVE MONITORING</div></div>
+  </div>
+ 
+  <div class="main-grid">
+    <div class="left-column">
+      <div class="panel card">
+        <div class="card-title">SYSTEM STATUS</div>
+        <div class="status-badge" id="statusBadge">
+          <span class="status-icon">&#128737;</span>
+          <div><div class="status-label" id="statusLabel">SAFE</div><div class="status-sublabel" id="statusSublabel">All systems nominal</div></div>
+        </div>
+        <div class="metric"><div class="metric-header"><span>ENCRYPTED</span><span id="enc-count">0</span></div><div class="metric-bar"><div class="metric-fill red" id="enc-bar" style="width:0%"></div></div></div>
+        <div class="metric"><div class="metric-header"><span>RECOVERED</span><span id="rec-count">0</span></div><div class="metric-bar"><div class="metric-fill blue" id="rec-bar" style="width:0%"></div></div></div>
+        <div class="metric"><div class="metric-header"><span>SAFE</span><span id="safe-count">0</span></div><div class="metric-bar"><div class="metric-fill green" id="safe-bar" style="width:0%"></div></div></div>
+        <div class="threat-score"><div><div class="threat-num" id="threat-num">0%</div><div class="threat-label">THREAT LEVEL</div></div><div style="font-size:22px">&#9889;</div></div>
+      </div>
+      <div class="panel card">
+        <div class="card-title">SIMULATION CTRL</div>
+        <div class="control-text">Launch ransomware simulations, recovery workflows, and forensic analysis.</div>
+        <button type="button" class="control-btn btn-red" id="launchAttack">&#9889; LAUNCH ATTACK</button>
+        <button type="button" class="control-btn btn-green" id="recoverFiles">&#8635; RECOVER FILES</button>
+        <button class="control-btn btn-blue" onclick="window.location.href='/report'">&#128203; GENERATE REPORT</button>
+      </div>
+      
+    </div>
+    <div class="center-column">
+      <div class="panel globe-card">
+        <div class="globe-ring-overlay"></div><div class="globe-ring-overlay"></div>
+        <div class="globe-corner tl"></div><div class="globe-corner tr"></div>
+        <div class="globe-corner bl"></div><div class="globe-corner br"></div>
+        <div class="globe-threat-count" id="globeThreatCount">&#9679; 0 ACTIVE THREATS</div>
+        <div id="globe-canvas"></div>
+        <div class="globe-label">GLOBAL THREAT MAP</div>
+      </div>
+      <div class="panel card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="card-title" style="margin-bottom:0">VICTIM FILES</div>
+          <span style="font-size:9px;opacity:.36;font-weight:500;" id="fileCount"></span>
+        </div>
+        <table class="victim-table">
+          <thead><tr><th>FILENAME</th><th>EXT</th><th>SIZE</th><th>STATUS</th></tr></thead>
+          <tbody id="victimTable"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="right-column">
+      
+      <div class="panel card">
+        <div class="card-title">LIVE SYSTEM LOG</div>
+        <div class="terminal-header"><div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div><span class="t-prompt">radsas@sec ~ bash</span></div>
+        <div class="terminal" id="terminal">
+          <div class="log info" style="opacity:.32">--- RADSAS ready.</div>
+          <div class="log info" style="opacity:.32">Awaiting operator command...</div>
+        </div>
+      </div>
+      <div class="panel card">
+        <div class="card-title">ATTACK TIMELINE</div>
+        <div class="timeline" id="timeline"><div class="empty-state">No events - start a simulation</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/libs/three.min.js"></script>
+<script src="/static/libs/OrbitControls.js"></script>
+<script src="/static/js/globe.js"></script>
+<script src="/static/js/dashboard.js"></script>
+<script src="/static/js/attack.js"></script>
+</body>
+</html>

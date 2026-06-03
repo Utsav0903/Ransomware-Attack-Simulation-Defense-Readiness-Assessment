@@ -1,0 +1,1029 @@
+<!-- =========================================================
+     MANUAL ENCRYPTION PAGE
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0">
+
+<title>Manual Encryption — RADSAS</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="/static/css/global.css">
+
+<style>
+
+/* =========================================================
+   PAGE LAYOUT
+========================================================= */
+
+.manual-wrap{
+
+  display:flex;
+
+  justify-content:center;
+
+  width:100%;
+  
+  flex:1;
+
+  display:flex;
+
+  width:100%;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  padding:140px 45px;
+
+  overflow:auto;
+
+}
+
+.manual-card{
+
+  width:920px;
+
+  padding:38px;
+
+  border-radius:24px;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.manual-title{
+
+  font-size:34px;
+
+  font-weight:900;
+
+  margin-bottom:12px;
+
+  letter-spacing:1px;
+
+  color:#eef4ff;
+
+}
+
+.manual-subtitle{
+
+  font-size:15px;
+
+  line-height:2;
+
+  color:#8ea8c7;
+
+  margin-bottom:32px;
+
+}
+
+
+/* =========================================================
+   FILE SELECT AREA
+========================================================= */
+
+.upload-box{
+
+  border:
+  2px dashed rgba(96,165,250,0.22);
+
+  border-radius:20px;
+
+  padding:42px;
+
+  text-align:center;
+
+  background:
+  rgba(255,255,255,0.02);
+
+  transition:0.25s;
+
+}
+
+.upload-box:hover{
+
+  border-color:
+  rgba(96,165,250,0.45);
+
+  background:
+  rgba(96,165,250,0.04);
+
+}
+
+.upload-icon{
+
+  font-size:64px;
+
+  margin-bottom:18px;
+
+  color:#60a5fa;
+
+}
+
+.upload-title{
+
+  font-size:22px;
+
+  font-weight:800;
+
+  margin-bottom:10px;
+
+}
+
+.upload-sub{
+
+  font-size:14px;
+
+  color:#7f96b2;
+
+  margin-bottom:24px;
+
+}
+
+.file-input{
+
+  display:none;
+
+}
+
+.choose-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  height:54px;
+
+  padding:0 28px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #60a5fa
+  );
+
+  color:#fff;
+
+  font-size:14px;
+
+  font-weight:800;
+
+  letter-spacing:1px;
+
+  cursor:pointer;
+
+  transition:0.25s;
+
+}
+
+.choose-btn:hover{
+
+  transform:translateY(-2px);
+
+  filter:brightness(1.08);
+
+}
+
+
+/* =========================================================
+   FILE INFO
+========================================================= */
+
+.selected-file{
+
+  margin-top:24px;
+
+  padding:18px 22px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+
+  display:none;
+
+}
+
+.sf-name{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  color:#dde8ff;
+
+  margin-bottom:8px;
+
+}
+
+.sf-meta{
+
+  font-size:13px;
+
+  color:#7f96b2;
+
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-wrap{
+
+  display:flex;
+
+  gap:14px;
+
+  margin-top:28px;
+
+}
+
+.action-btn{
+
+  flex:1;
+
+  height:58px;
+
+  border:none;
+
+  border-radius:16px;
+
+  font-size:15px;
+
+  font-weight:800;
+
+  letter-spacing:1px;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:0.25s;
+
+}
+
+.encrypt-btn{
+
+  background:
+  linear-gradient(
+    135deg,
+    #c11232,
+    #ff3d6b
+  );
+
+  box-shadow:
+  0 0 24px rgba(255,61,107,0.22);
+
+}
+
+.decrypt-btn{
+
+  background:
+  linear-gradient(
+    135deg,
+    #1d4ed8,
+    #60a5fa
+  );
+
+  box-shadow:
+  0 0 24px rgba(96,165,250,0.22);
+
+}
+
+.action-btn:hover{
+
+  transform:translateY(-2px);
+
+  filter:brightness(1.08);
+
+}
+
+
+/* =========================================================
+   STATUS BOX
+========================================================= */
+
+.manual-status{
+
+  margin-top:24px;
+
+  padding:18px 20px;
+
+  border-radius:16px;
+
+  background:
+  rgba(96,165,250,0.05);
+
+  border:
+  1px solid rgba(96,165,250,0.15);
+
+  font-size:15px;
+
+  color:#93c5fd;
+
+  min-height:60px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+}
+
+.manual-status.ok{
+
+  background:
+  rgba(52,211,153,0.06);
+
+  border-color:
+  rgba(52,211,153,0.18);
+
+  color:#6ee7b7;
+
+}
+
+.manual-status.err{
+
+  background:
+  rgba(255,61,107,0.06);
+
+  border-color:
+  rgba(255,61,107,0.18);
+
+  color:#fda4af;
+
+}
+
+
+/* =========================================================
+   LOG SECTION
+========================================================= */
+
+.log-section{
+
+  margin-top:28px;
+
+}
+
+.log-title{
+
+  font-size:14px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  color:#60a5fa;
+
+  margin-bottom:14px;
+
+}
+
+.sim-log{
+
+  height:650px;
+
+  overflow-y:auto;
+
+  border-radius:16px;
+
+  padding:18px;
+
+  background:
+  rgba(2,6,18,0.88);
+
+  border:
+  1px solid rgba(96,165,250,0.10);
+
+  font-family:monospace;
+
+  font-size:15px;
+
+  line-height:2;
+
+}
+
+.slog{
+
+  margin-bottom:8px;
+
+}
+
+.slog.success{
+
+  color:#6ee7b7;
+
+}
+
+.slog.warning{
+
+  color:#fde68a;
+
+}
+
+.slog.error{
+
+  color:#fda4af;
+
+}
+
+.slog.info{
+
+  color:#93c5fd;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+.manual-grid{
+
+  width:100%;
+
+  max-width:1200px;
+
+  margin:0 auto 0 200px;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:35px;
+
+  align-items:stretch;
+
+}
+
+@media(max-width:900px){
+
+  .manual-card{
+
+    width:100%;
+
+  }
+
+  .action-wrap{
+
+    flex-direction:column;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="topbar">
+
+  <div class="logo-wrap">
+
+    <div class="logo-circle">R</div>
+
+    <div class="logo-text">
+
+      <h1>RADSAS</h1>
+
+      <p>ATTACK SIMULATION SYSTEM</p>
+
+    </div>
+
+  </div>
+
+  <div class="nav-links">
+
+    <a href="/" class="nav-link">Dashboard</a>
+
+    <a href="/manual" class="nav-link active">Manual</a>
+
+    <a href="/about" class="nav-link">About Project</a>
+
+  </div>
+
+</div>
+
+
+<div class="manual-wrap">
+
+  <div class="manual-grid">
+
+    <!-- LEFT CARD -->
+    <div class="panel manual-card">
+
+    <div class="manual-title">
+
+      MANUAL ENCRYPTION ENGINE
+
+    </div>
+
+    <div class="manual-subtitle">
+
+      Select any file manually from your device to simulate
+      ransomware encryption and recovery operations.
+
+    </div>
+
+
+    <!-- Upload Area -->
+
+    <div class="upload-box">
+
+      <div class="upload-icon">
+
+        📁
+
+      </div>
+
+      <div class="upload-title">
+
+        Select File
+
+      </div>
+
+      <div class="upload-sub">
+
+        Choose any file for encryption simulation
+
+      </div>
+
+      <label class="choose-btn">
+
+       
+
+<input
+  type="file"
+  id="fileInput"
+  multiple
+>
+
+      </label>
+
+    </div>
+
+
+    <!-- Selected File -->
+
+    <div class="selected-file"
+         id="selectedFile">
+
+      <div class="sf-name"
+           id="sfName">
+
+      </div>
+
+      <div class="sf-meta"
+           id="sfMeta">
+
+      </div>
+
+    </div>
+
+
+    <!-- Buttons -->
+
+    <div class="action-wrap">
+
+      <button class="action-btn encrypt-btn"
+              id="encryptBtn">
+
+        🔒 ENCRYPT FILE
+
+      </button>
+
+      <button class="action-btn decrypt-btn"
+              id="decryptBtn">
+
+        🔓 RECOVER FILE
+
+      </button>
+
+    </div>
+
+
+    <!-- Status -->
+
+    <div class="manual-status"
+         id="manualStatus">
+
+      ● Select a file to begin.
+
+    </div>
+
+
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="panel manual-card">
+
+      <div class="log-title">
+
+        OPERATION LOG
+
+      </div>
+
+      <div class="sim-log"
+           id="simLog">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPT
+========================================================= -->
+
+
+<!-- =========================================================
+     SCRIPT
+========================================================= -->
+
+<script>
+
+const fileInput =
+document.getElementById('fileInput');
+
+const selectedFile =
+document.getElementById('selectedFile');
+
+const sfName =
+document.getElementById('sfName');
+
+const sfMeta =
+document.getElementById('sfMeta');
+
+const statusBox =
+document.getElementById('manualStatus');
+
+const simLog =
+document.getElementById('simLog');
+
+let currentFiles = [];
+
+
+/* =========================================================
+   FILE SELECT
+========================================================= */
+
+fileInput.addEventListener('change', function(){
+
+  currentFiles =
+  Array.from(this.files);
+
+  if(currentFiles.length === 0)
+    return;
+
+  selectedFile.style.display =
+  'block';
+
+  sfName.innerHTML =
+  currentFiles.map(f => f.name)
+  .join('<br>');
+
+  let totalSize = 0;
+
+  currentFiles.forEach(function(file){
+
+    totalSize += file.size;
+
+  });
+
+  sfMeta.innerHTML =
+
+    currentFiles.length +
+
+    ' files selected • ' +
+
+    (totalSize / 1024).toFixed(2)
+
+    + ' KB';
+
+  setStatus(
+
+    '● Files selected successfully.',
+
+    ''
+
+  );
+
+});
+
+
+/* =========================================================
+   ENCRYPT
+========================================================= */
+
+document.getElementById('encryptBtn')
+.addEventListener('click', async function(){
+
+  if(currentFiles.length === 0){
+
+    setStatus(
+      '● Please select a file first.',
+      'err'
+    );
+
+    return;
+
+  }
+
+  addLog(
+    'Initializing encryption engine...',
+    'info'
+  );
+
+  await sleep(600);
+
+  addLog(
+    'Loading AES encryption...',
+    'warning'
+  );
+
+  await sleep(600);
+
+  addLog(
+    'Encrypting selected file...',
+    'warning'
+  );
+
+  await sleep(800);
+
+  try{
+
+    const response =
+    await fetch('/manual-encrypt',{
+
+      method:'POST',
+
+      headers:{
+        'Content-Type':'application/json'
+      },
+
+      body:JSON.stringify({
+
+        files: currentFiles.map(
+          f => f.name
+        )
+
+      })
+
+    });
+
+    const data =
+await response.json();
+
+if(data.success){
+
+  currentFiles = [];
+
+  fileInput.value = "";
+
+  setStatus(
+    '● File encrypted successfully.',
+    'ok'
+  );
+
+  addLog(
+    'Encryption completed successfully.',
+    'success'
+  );
+
+}
+
+else{
+
+  setStatus(
+    '● Encryption failed.',
+    'err'
+  );
+
+  addLog(
+    'Encryption failed.',
+    'error'
+  );
+
+}
+
+}
+
+  catch(err){
+
+    console.error(err);
+
+    setStatus(
+      '● Encryption failed.',
+      'err'
+    );
+
+    addLog(
+      'Encryption failed.',
+      'error'
+    );
+
+  }
+
+});
+
+/* =========================================================
+   DECRYPT
+========================================================= */
+
+document.getElementById('decryptBtn')
+.addEventListener('click', async function(){
+
+  if(currentFiles.length === 0){
+
+    setStatus(
+      '● Please select a file first.',
+      'err'
+    );
+
+    return;
+
+  }
+
+  addLog(
+    'Loading recovery engine...',
+    'info'
+  );
+
+  await sleep(600);
+
+  addLog(
+    'Validating encrypted file...',
+    'info'
+  );
+
+  await sleep(600);
+
+  addLog(
+    'Recovering selected file...',
+    'success'
+  );
+
+  await sleep(800);
+
+  try{
+
+    const response =
+    await fetch('/manual-decrypt',{
+
+      method:'POST',
+
+      headers:{
+        'Content-Type':'application/json'
+      },
+
+      body:JSON.stringify({
+
+        files: currentFiles.map(
+          f => f.name
+        )
+
+      })
+
+    });
+
+    const data =
+await response.json();
+
+if(data.success){
+
+  currentFiles = [];
+
+  fileInput.value = "";
+
+  setStatus(
+    '● File recovered successfully.',
+    'ok'
+  );
+
+  addLog(
+    'Recovery completed successfully.',
+    'success'
+  );
+
+}
+
+else{
+
+  setStatus(
+    '● Recovery failed.',
+    'err'
+  );
+
+  addLog(
+    'Recovery failed.',
+    'error'
+  );
+
+}
+
+  }
+
+  catch(err){
+
+    console.error(err);
+
+    setStatus(
+      '● Recovery failed.',
+      'err'
+    );
+
+    addLog(
+      'Recovery failed.',
+      'error'
+    );
+
+  }
+
+});
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function setStatus(msg, cls){
+
+  statusBox.innerHTML = msg;
+
+  statusBox.className =
+  'manual-status ' + cls;
+
+}
+
+function addLog(msg, type){
+
+  const div =
+  document.createElement('div');
+
+  div.className =
+  'slog ' + type;
+
+  const ts =
+  new Date().toLocaleTimeString();
+
+  div.innerHTML =
+  '[' + ts + '] ' + msg;
+
+  simLog.appendChild(div);
+
+  simLog.scrollTop =
+  simLog.scrollHeight;
+
+}
+
+function sleep(ms){
+
+  return new Promise(
+    r => setTimeout(r, ms)
+  );
+
+}
+
+</script>
+
+</body>
+</html>

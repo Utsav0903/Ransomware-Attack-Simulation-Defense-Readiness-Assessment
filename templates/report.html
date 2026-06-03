@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Forensic Report — RADSAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/global.css">
+<link rel="stylesheet" href="/static/css/report.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="topbar">
+    <div class="logo-wrap">
+      <div class="logo-circle">R</div>
+      <div class="logo-text"><h1>RADSAS</h1><p>ATTACK SIMULATION SYSTEM</p></div>
+    </div>
+    <div class="nav-links">
+      <a href="/"       class="nav-link">Dashboard</a>
+      <a href="/manual" class="nav-link">Manual</a>
+      <a href="/about"  class="nav-link">About Project</a>
+    </div>
+    <div class="topbar-right">
+      <div class="live-status" style="color:#60a5fa">&#9679; FORENSIC REPORT</div>
+    </div>
+  </div>
+
+  <div class="report-wrap">
+
+    <!-- Page header -->
+    <div class="rpt-header">
+      <div>
+        <div class="rpt-header-title">INCIDENT FORENSIC REPORT</div>
+        <div class="rpt-header-sub" id="rptGeneratedAt">Loading...</div>
+      </div>
+	
+      <div class="rpt-header-actions">
+        <button class="rpt-btn"         onclick="loadReport()">&#8635; Refresh</button>
+        <button class="rpt-btn primary" onclick="window.location.href='/'">&#8592; Dashboard</button>
+      </div>
+    </div>
+
+<!-- INCIDENT SUMMARY -->
+
+<div class="panel rpt-summary-card">
+
+    <div class="rpt-summary-head">
+
+        <div>
+
+            <div class="rpt-summary-title">
+
+                🚨 INCIDENT SUMMARY
+
+            </div>
+
+            <div class="rpt-summary-sub">
+
+                Live ransomware forensic overview
+
+            </div>
+
+        </div>
+
+        <div class="rpt-summary-status"
+             id="incidentStatus">
+
+            MONITORING
+
+        </div>
+
+    </div>
+
+    <div class="rpt-summary-grid">
+
+        <div class="rpt-summary-box">
+
+            <div class="sum-label">
+
+                THREAT STATE
+
+            </div>
+
+            <div class="sum-value"
+                 id="sumThreatState">
+
+                SAFE
+
+            </div>
+
+        </div>
+
+        <div class="rpt-summary-box">
+
+            <div class="sum-label">
+
+                FILES IMPACTED
+
+            </div>
+
+            <div class="sum-value"
+                 id="sumFiles">
+
+                0
+
+            </div>
+
+        </div>
+
+        <div class="rpt-summary-box">
+
+            <div class="sum-label">
+
+                RECOVERY STATUS
+
+            </div>
+
+            <div class="sum-value"
+                 id="sumRecovery">
+
+                READY
+
+            </div>
+
+        </div>
+
+        <div class="rpt-summary-box">
+
+            <div class="sum-label">
+
+                THREAT SCORE
+
+            </div>
+
+            <div class="sum-value"
+                 id="sumThreat">
+
+                0%
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    
+
+    <!-- Main content grid -->
+    <div class="rpt-grid">
+
+      <div class="panel rpt-card">
+        <div class="rpt-title">&#9876; ATTACK DETAILS</div>
+        <div id="rptAttack">Loading...</div>
+      </div>
+
+      <div class="panel rpt-card">
+        <div class="rpt-title">&#128193; FILE BREAKDOWN</div>
+        <div id="rptFileBars">Loading...</div>
+      </div>
+
+      <div class="panel rpt-card rpt-card-tall">
+        <div class="rpt-title">&#128336; EVENT LOG</div>
+        <div class="rpt-log-list" id="rptLog"></div>
+      </div>
+
+      <div class="panel rpt-card rpt-card-tall">
+        <div class="rpt-title">&#128272; RECOMMENDATIONS</div>
+        <div id="rptRecs"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="/static/js/report.js"></script>
+</body>
+</html>

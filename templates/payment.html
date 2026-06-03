@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0">
+
+<title>System Compromised - RADSAS</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="/static/css/global.css">
+
+<link rel="stylesheet"
+      href="/static/css/ransom.css">
+
+</head>
+
+<body>
+
+<div class="ransom-wrap">
+
+    <div class="panel ransom-card">
+
+
+        <!-- =================================================
+             WARNING ICON
+        ================================================== -->
+
+        <div class="warning-icon">
+
+            ⚠
+
+        </div>
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <h1 class="ransom-title">
+
+            YOUR FILES HAVE BEEN ENCRYPTED
+
+        </h1>
+
+
+        <!-- =================================================
+             WARNING TEXT
+        ================================================== -->
+
+        <p class="ransom-sub">
+
+            Your system has been compromised by the
+            RADSAS ransomware simulation engine.
+
+            <br><br>
+
+            All critical files, confidential documents,
+            and sensitive information are currently encrypted
+            and inaccessible.
+
+            <br><br>
+
+            Failure to complete the ransom payment before
+            the deadline may result in permanent loss of data.
+
+        </p>
+
+
+        <!-- =================================================
+             RANSOM AMOUNT
+        ================================================== -->
+
+        <div class="ransom-box">
+
+            <div class="ransom-label">
+
+                RANSOM AMOUNT
+
+            </div>
+
+            <div class="ransom-amount">
+
+                2.50 BTC
+
+            </div>
+
+            <div class="ransom-usd">
+
+                ≈ $148,000 USD
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             COUNTDOWN
+        ================================================== -->
+
+        <div class="countdown-wrap">
+
+            <div class="countdown-label">
+
+                DECRYPTION DEADLINE
+
+            </div>
+
+            <div class="countdown"
+                 id="countdown">
+
+                05:00
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PAYMENT BUTTON
+        ================================================== -->
+
+        <button class="pay-btn"
+                id="payBtn">
+
+            PAY NOW
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPT
+========================================================= -->
+
+<script>
+
+var s = 300;
+
+var t =
+document.getElementById('countdown');
+
+
+setInterval(function(){
+
+    if(s <= 0){
+
+        t.textContent = '00:00';
+
+        return;
+
+    }
+
+    s--;
+
+    t.textContent =
+
+        String(
+            Math.floor(s / 60)
+        ).padStart(2,'0')
+
+        + ':'
+
+        +
+
+        String(
+            s % 60
+        ).padStart(2,'0');
+
+
+    if(s < 60){
+
+        t.style.color = '#ff3d6b';
+
+    }
+
+},1000);
+
+document.getElementById('payBtn')
+.addEventListener('click',function(){
+
+    const btn = this;
+
+    btn.innerHTML = 'PAYMENT PROCESSING...';
+
+    btn.disabled = true;
+
+    setTimeout(() => {
+
+        btn.innerHTML = 'PAYMENT SUCCESSFUL ✓';
+
+        btn.style.background =
+        'linear-gradient(135deg,#16a34a,#22c55e)';
+
+    },2000);
+
+    setTimeout(async () => {
+
+    try{
+
+        const response =
+        await fetch('/payment-success',{
+
+            method:'POST'
+
+        });
+
+        const data =
+        await response.json();
+
+        if(data.success){
+
+            window.location.href = '/';
+
+        }
+
+        else{
+
+            alert(
+                'Recovery failed: ' +
+                data.message
+            );
+
+            btn.disabled = false;
+
+            btn.innerHTML = 'PAY NOW';
+
+        }
+
+    }
+
+    catch(err){
+
+        console.error(err);
+
+        alert('Recovery request failed.');
+
+        btn.disabled = false;
+
+        btn.innerHTML = 'PAY NOW';
+
+    }
+
+},3500);
+
+});
+
+</script>
+
+</body>
+</html>

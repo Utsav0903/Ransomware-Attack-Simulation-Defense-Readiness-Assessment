@@ -1,0 +1,11 @@
+{
+    "status": "SAFE",
+    "phase": "IDLE",
+    "encrypted": 0,
+    "recovered": 0,
+    "safe": 12,
+    "threat": 0,
+    "attack_running": false,
+    "encryption_speed": 0,
+    "payment_completed": true
+}

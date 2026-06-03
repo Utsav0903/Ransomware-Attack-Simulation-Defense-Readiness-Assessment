@@ -1,0 +1,312 @@
+[
+  {
+    "time": "01:04:56",
+    "level": "INFO",
+    "message": "RADSAS System initialized."
+  },
+  {
+    "time": "01:04:56",
+    "level": "INFO",
+    "message": "All subsystems online. Awaiting operator command."
+  },
+  {
+    "time": "01:05:10",
+    "level": "CRITICAL",
+    "message": "Ransomware attack sequence initiated."
+  },
+  {
+    "time": "01:05:10",
+    "level": "WARNING",
+    "message": "Filesystem scan initialized."
+  },
+  {
+    "time": "01:05:10",
+    "level": "WARNING",
+    "message": "Payload injection active."
+  },
+  {
+    "time": "01:05:10",
+    "level": "CRITICAL",
+    "message": "Encryption engine armed."
+  },
+  {
+    "time": "01:05:10",
+    "level": "WARNING",
+    "message": "Reconnaissance active \u2014 scanning target"
+  },
+  {
+    "time": "01:05:12",
+    "level": "WARNING",
+    "message": "Infiltration in progress \u2014 injecting payload"
+  },
+  {
+    "time": "01:05:14",
+    "level": "WARNING",
+    "message": "Lateral movement \u2014 traversing file system"
+  },
+  {
+    "time": "01:05:16",
+    "level": "WARNING",
+    "message": "Ransom payment portal accessed."
+  },
+  {
+    "time": "01:05:16",
+    "level": "CRITICAL",
+    "message": "Encryption engine activated"
+  },
+  {
+    "time": "01:05:16",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (1).jpg"
+  },
+  {
+    "time": "01:05:16",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (2).txt"
+  },
+  {
+    "time": "01:05:17",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (3).txt"
+  },
+  {
+    "time": "01:05:17",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (4).txt"
+  },
+  {
+    "time": "01:05:18",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (5).txt"
+  },
+  {
+    "time": "01:05:18",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (6).txt"
+  },
+  {
+    "time": "01:05:18",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (7).txt"
+  },
+  {
+    "time": "01:05:19",
+    "level": "CRITICAL",
+    "message": "Encryption complete \u2014 7/7 files encrypted."
+  },
+  {
+    "time": "01:05:22",
+    "level": "SUCCESS",
+    "message": "Ransom payment confirmed."
+  },
+  {
+    "time": "01:05:22",
+    "level": "INFO",
+    "message": "Recovery authorization granted."
+  },
+  {
+    "time": "01:05:40",
+    "level": "INFO",
+    "message": "Recovery engine initialized."
+  },
+  {
+    "time": "01:05:40",
+    "level": "SUCCESS",
+    "message": "Decryption process started."
+  },
+  {
+    "time": "01:05:40",
+    "level": "INFO",
+    "message": "Attempting victim file restoration."
+  },
+  {
+    "time": "01:05:40",
+    "level": "INFO",
+    "message": "Decryption engine started. Restoring files..."
+  },
+  {
+    "time": "01:05:40",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (1).jpg"
+  },
+  {
+    "time": "01:05:41",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (2).txt"
+  },
+  {
+    "time": "01:05:41",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (3).txt"
+  },
+  {
+    "time": "01:05:41",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (4).txt"
+  },
+  {
+    "time": "01:05:42",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (5).txt"
+  },
+  {
+    "time": "01:05:42",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (6).txt"
+  },
+  {
+    "time": "01:05:42",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (7).txt"
+  },
+  {
+    "time": "01:05:43",
+    "level": "SUCCESS",
+    "message": "7/7 files successfully restored."
+  },
+  {
+    "time": "01:05:43",
+    "level": "INFO",
+    "message": "System status: SAFE. All subsystems nominal."
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (1).jpg"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (1).jpg"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (2).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (2).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (3).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (3).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (4).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (4).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (5).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (5).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (6).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (6).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (7).txt"
+  },
+  {
+    "time": "01:06:10",
+    "level": "CRITICAL",
+    "message": "Encrypted: Test  (7).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (1).jpg"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (1).jpg"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (2).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (2).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (3).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (3).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (4).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (4).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (5).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (5).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (6).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (6).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (7).txt"
+  },
+  {
+    "time": "01:06:26",
+    "level": "SUCCESS",
+    "message": "Recovered: Test  (7).txt"
+  }
+]
